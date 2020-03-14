@@ -15,7 +15,6 @@ class App extends Component{
     buttonText:'Show Persons'
   });
      
-
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons.splice();
     const persons = [...this.state.persons];
@@ -29,11 +28,9 @@ class App extends Component{
       return p.id === id;
     });
 
-
     const person = {
       ...this.state.persons[personIndex] //spread the existing state and gets that particular person object rather than pointing to it 
     };
-
 
     person.name = event.target.value;
 
@@ -47,8 +44,6 @@ class App extends Component{
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow });
   };
-
-
 
   render() {
 
@@ -83,7 +78,6 @@ class App extends Component{
       bgStyle.backgroundColor = 'red'
     };
 
-    
   return (
     <div className="App">
       <h1>Hi There</h1>
