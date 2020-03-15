@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 //import Radium, {StyleRoot} from 'radium';
 //import React, { useState } from 'react';
-import './App.css';
+import classes from  './App.css';
 import Person from './Person/Person';
 import StyledButton from './StyleComponents/StyledButton';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 //import './Person/Person.css';
 
 class App extends Component{
@@ -42,6 +43,7 @@ class App extends Component{
     this.setState({ persons: persons });
   };
 
+  //ANCHOR add comments to this method
   togglePersonHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow });
@@ -55,6 +57,7 @@ class App extends Component{
 
   render() {
 
+    //FIXME this dead code must be removed
    /*  const bgStyle = {
       backgroundColor: 'green',
       color:'white',
@@ -72,41 +75,45 @@ class App extends Component{
 
     let persons = null;
 
+    let buttonClass = [classes.Button];
+
     if (this.state.showPersons) {
     
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person
-              name={person.name}
-              age={person.age}
-              click={() => this.deletePersonHandler(index)}
-              key={person.id}
-              changed={(event) => this.nameChangedHandler(event,person.id)}/>
+            return <ErrorBoundary key={person.id}>
+                      <Person
+                      name={person.name}
+                      age={person.age}
+                      click={() => this.deletePersonHandler(index)}
+                      changed={(event) => this.nameChangedHandler(event,person.id)}/>
+              </ErrorBoundary>
           })}
        </div>
       );
-
-      StyledButton.backgroundColor = 'red';
-      StyledButton[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
+      buttonClass.push(classes.Red);
     };
 
   return (
     //<StyleRoot>
-    <div className="App">
+    <div className={classes.App}>
       <h1>Hi There</h1>
       <h1>test another </h1>
       {/* <button
         style={bgStyle}
         onClick={this.togglePersonHandler}>{this.state.buttonText}</button> */}
 
-        <StyledButton alt={this.state.showPersons}
-          onClick={this.togglePersonHandler}>{this.state.buttonText}</StyledButton>
+        {/* <StyledButton alt={this.state.showPersons}
+          onClick={this.togglePersonHandler}>{this.state.buttonText}</StyledButton> */}
+
+        <button className={buttonClass.join(' ')}
+          onClick={this.togglePersonHandler}>
+            {this.state.buttonText}
+            </button>
       
       {persons}
+     
       
     </div>  
     //</StyleRoot>

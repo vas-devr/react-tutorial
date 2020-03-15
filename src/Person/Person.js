@@ -14,6 +14,11 @@ const StyledDiv = styled.div
                         width: 450px
                     }`;
 
+                    const rand = Math.random();
+                    if( rand >= 0.7 ){
+                        throw new Error('Something went wrong');
+                    }
+
 const person = (props) => {
    /*  const style={
         '@media (min-width: 500px)':{
