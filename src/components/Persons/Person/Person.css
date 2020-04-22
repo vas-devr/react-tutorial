@@ -1,0 +1,65 @@
+.Person {
+    width: 60%;
+    margin: 10px auto;
+    border: 1px solid #eee;
+    box-shadow: 0px 2px 3px 1px #ccc;
+    border-radius:  10px;
+    padding: 16px;
+    text-align: center;
+    outline:0%;
+
+    background: linear-gradient(48deg, #1cdcaa, #f84900, #e2f800, #f80092);
+    background-size: 800% 800%;
+    
+    -webkit-animation: AnimationName 23s ease infinite;
+    -moz-animation: AnimationName 23s ease infinite;
+    -o-animation: AnimationName 23s ease infinite;
+    animation: AnimationName 23s ease infinite;
+} 
+
+.Person input{
+    color: white;
+    border: 0px;
+    background: transparent;
+    border-bottom: 3px solid teal;
+    border-bottom-style: dashed;
+    font-size: 30px;
+    font-style: italic;
+    padding-bottom: 2px;
+    outline: 0px;
+    align-content: center;
+}
+
+.Person:hover{
+    width:65%;
+    margin:15px auto;
+    border: 2px solid #eee;
+    box-shadow: 2px 3px 4px 1px #6df3f3;
+    
+    outline:0%;
+}
+
+
+/* Css Animations */
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 9%}
+    50%{background-position:100% 92%}
+    100%{background-position:0% 9%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 9%}
+    50%{background-position:100% 92%}
+    100%{background-position:0% 9%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 9%}
+    50%{background-position:100% 92%}
+    100%{background-position:0% 9%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 9%}
+    50%{background-position:100% 92%}
+    100%{background-position:0% 9%}
+}

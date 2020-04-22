@@ -25,5 +25,29 @@
 
 .Button.Red:hover {
   background-color: tomato;
-  color: black;
+  color: red;
+}
+
+.P.text{
+  color: red;
+}
+
+.P.text.red{
+  color:red;
+  font-weight: bold;
+}
+
+.AddButton {
+  background-color: aquamarine;
+  outline: 0px;
+  font:inherit;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 3px #eee;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+.AddButton:hover{
+  background-color: #d9966f;
+
 }
